@@ -7,10 +7,8 @@ import urllib2
 import sys
 import cookielib
 import time
-#mySpider = whyspider.WhySpider()
 
-
-class Market:
+class Market():
     def __init__(self):
         """Constructor"""
         self.cookie_jar = cookielib.CookieJar()
@@ -102,12 +100,12 @@ if __name__=='__main__':
     marketUrl.seek(0)
     marketUrl.readline()      
     myMarket.sendPost(marketUrl,fileSuc,fileFai,fileOth,fileError)
-    #import urllib2
-    #r = urllib2.urlopen('http://m.ctrip.com')
-    #print '%s %s %s' % (r.getcode(),r.geturl(),r.info())
-    #print 'code:%s' % r.getcode()
-    #print 'url:%s' % r.geturl()
-    #print 'info:%s' % r.info()
+    import urllib2
+    r = urllib2.urlopen('http://m.ctrip.com')
+    print '%s %s %s' % (r.getcode(),r.geturl(),r.info())
+    print 'code:%s' % r.getcode()
+    print 'url:%s' % r.geturl()
+    print 'info:%s' % r.info()
     #myMarket.TestUrlOpen(fileTes)
     #myMarket.TestUrlRequest(fileTes)
     #url = 'http://m.ctrip.com/market/libs.js'
