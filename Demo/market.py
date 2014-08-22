@@ -1,6 +1,15 @@
 #!/user/bin/env python
 #coding=utf-8
 
+'''
+Created on 2014-8-22
+
+@auther: Eastsheen
+
+email:yangdongxian@gmail.com
+
+'''
+
 import urllib
 import whyspider
 import urllib2
