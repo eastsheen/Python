@@ -11,26 +11,24 @@ email:yangdongxian@gmail.com
 '''
 
 import urllib
-import whyspider
 import urllib2
 import sys
 import cookielib
 import time
 
-class Market():
+class url_request():
+    #初始化opener headlers,默认headlers为android Nexus 4
     def __init__(self):
         """Constructor"""
         self.cookie_jar = cookielib.CookieJar()
         self.opener = urllib2.build_opener(urllib2.HTTPCookieProcessor())
         self.headlers = {'User-Agent' : 'Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 4 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19'}
-             
+     
+    #发送post请求     
     def sendPost(self,marketUrl,fileSuc,fileFai,fileOth,fileError):
         ErrorCount = 0
         passCount = 0
-        for read in marketUrl:
-            #my_request = urllib2.Request(url=get_url,headers=self.headlers)
-            #reCode = urllib2.urlopen(my_request)
-            #print '%s' % reCode.getcode()          
+        for read in marketUrl:     
             try:
                 #time.sleep(0.5)
                 code = urllib2.Request(url=read,headers=self.headlers)
@@ -62,65 +60,72 @@ class Market():
         print 'ErrorCount:%s' % ErrorCount
         print 'PassCount:%s' % passCount
 
-    def TestUrlOpen(self,fileTes):
-        f = urllib2.urlopen('http://python.org')
-        print f.read(100)
-        fileTes.write(f.read())
+    #发送get请求
+    def send_get(self,urls,fileSuc,fileFai):
+        Passcount = 0
+        ErrorCount = 0
+        try:
+            #设置模拟模式
+            self.set_ios_mobile()
+            while 1:
+                readline = urls.readline()
+                if not readline:
+                    break
+                else:
+                    my_request = urllib2.Request(url=readline)
+                    #用urlopen打开url,urlopen对象可以获取如下三个方法getcode()、geturl()、info()
+                    mycode = urllib2.urlopen(my_request)
+                    #url对象用read()方法读取response内容
+                    myReadCode= mycode.read()
+                    #print "code:%s" % mycode
+                    print "getcodes:%s" % mycode.getcode()
+                    print "geturl:%s" % mycode.geturl()
+                    #print "info:%s" % mycode.info()
+                    #print "getcontent:%s" % myReadCode
+                    #write suc
+                    log = str(mycode.getcode())+mycode.geturl()
+                    fileSuc.write(log)
+        except Exception,e:
+            print e
+            #fileFai.write(e)
     
-    def TestUrlRequest(self,fileTes):
-        request = urllib2.Request(url="http://www.baidu.com/",data='python')
-        f = urllib2.urlopen(request)
-        #print f.read()
-        fileTes.write(f.read())
-        
-    def TestUrlAuth():
-        auth_handler = urllib2.HTTPBasicAuthHandler()
-        auth_handler.add_password(uri='https://accounts.ctrip.com/H5Login/#login',user='wwwwww',passwd='good08')
-        opener = urllib2.build_opener(auth_handler)
-        urllib2.install_opener(opener)
-        urllib2.urlopen('https://accounts.ctrip.com/H5Login/#login')
+    #模拟android Nexus 4 手机
+    def set_android_mobile(self):
+        user_agent= "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 4 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19"
+        self.headlers = {"User-Agent",user_agent}
     
+    #模拟ios 5 手机
+    def set_ios_mobile(self):
+        user_agent = "Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X; en-us) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53"
+        self.headlers = {"User-Agent",user_agent}
+     
+    #模拟computer
+    def set_computer(self):
+        user_agent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36"
+        self.headlers = {"User-Agent",user_agent}
+    
+    #关闭file      
     def closeFile(self):
         fileSuc.close()
         fileFai.close()
         fileOth.close()
-        marketUrl.close()
-        
-    def send_get(self,get_url):
-        try:
-            my_request = urllib2.Request(url=get_url,headers=self.headlers)
-            reCode = urllib2.urlopen(my_request)
-            print '%s' % reCode.getcode()
-            #reUrl = self.opener.open(my_request)
-            #print reUrl.read()
-            #print reUrl.getCode()
-        except Exception,e:
-            print "Exception:",e
-            
+        urls.close()
+                 
         
 if __name__=='__main__':
-    myMarket = Market()
-    marketUrl = open('newMarketUrl.txt','r')
-    fileSuc = open('marketSuc.txt','w')
-    fileFai = open('marketFai.txt','w')
-    fileOth = open('marketOth.txt','w')
+    myRequest = url_request()
+    urls = open('sourceUrl.txt','r')
+    fileSuc = open('urlSuc.txt','w')
+    fileFai = open('urlFai.txt','w')
+    fileOth = open('urlOth.txt','w')
     fileTes = open('marketTes.txt','w')
     fileError = open('fileError.txt','w')
-    marketUrl.seek(0)
-    marketUrl.readline()      
-    myMarket.sendPost(marketUrl,fileSuc,fileFai,fileOth,fileError)
-    import urllib2
-    r = urllib2.urlopen('http://m.ctrip.com')
-    print '%s %s %s' % (r.getcode(),r.geturl(),r.info())
-    print 'code:%s' % r.getcode()
-    print 'url:%s' % r.geturl()
-    print 'info:%s' % r.info()
-    #myMarket.TestUrlOpen(fileTes)
-    #myMarket.TestUrlRequest(fileTes)
-    #url = 'http://m.ctrip.com/market/libs.js'
-    #myMarket.send_get(url)
-    
-    myMarket.closeFile()
+    urls.seek(0)
+    #urls.readline()      
+    #myMarket.sendPost(marketUrl,fileSuc,fileFai,fileOth,fileError)
+    url = 'http://m.ctrip.com/market/AdMonitorService.aspx'
+    myRequest.send_get(urls,fileSuc,fileFai)
+    myRequest.closeFile()
     
     #da = sys.stdin.read()
     #print  'data %s' % da    

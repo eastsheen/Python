@@ -1,0 +1,6 @@
+http://m.ctrip.com/market/down.html?app=1
+http://m.ctrip.com/market/AdMonitorService.aspx
+http://m.ctrip.com/market/activity/lottery/index.html
+http://m.ctrip.com/market/down.html
+http://m.ctrip.com/market/activity/appredpacket/
+http://m.ctrip.com/market/f/banner.html
