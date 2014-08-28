@@ -95,7 +95,6 @@ class url_request():
     def closeFile(self):
         fileSuc.close()
         fileFai.close()
-        fileOth.close()
         urls.close()
                  
         
@@ -104,7 +103,6 @@ if __name__=='__main__':
     urls = open('sourceUrl.txt','r')
     fileSuc = open('urlSuc.txt','w')
     fileFai = open('urlFai.txt','w')
-    fileOth = open('urlOth.txt','w')
     urls.seek(0)
     #post
     myRequest.sendPost(urls,fileSuc,fileFai)
