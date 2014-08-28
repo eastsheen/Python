@@ -1,1 +1,5 @@
-200http://m.ctrip.com/market/down.html?app=1200http://m.ctrip.com/market/AdMonitorService.aspx200http://m.ctrip.com/market/activity/lottery/index.html200http://m.ctrip.com/market/down.html200http://m.ctrip.com/market/activity/appredpacket/200http://m.ctrip.com/market/f/banner.html
+200,http://m.ctrip.com/market/AdMonitorService.aspx
+200,http://m.ctrip.com/market/activity/lottery/index.html
+200,http://m.ctrip.com/market/down.html
+200,http://m.ctrip.com/market/activity/appredpacket/
+200,http://m.ctrip.com/market/f/banner.html
