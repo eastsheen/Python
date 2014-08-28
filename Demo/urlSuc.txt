@@ -1,5 +1,0 @@
-200,http://m.ctrip.com/market/AdMonitorService.aspx
-200,http://m.ctrip.com/market/activity/lottery/index.html
-200,http://m.ctrip.com/market/down.html
-200,http://m.ctrip.com/market/activity/appredpacket/
-200,http://m.ctrip.com/market/f/banner.html
