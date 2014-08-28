@@ -1,6 +1,6 @@
 Python
 ========
-I love coffee and python
+I love sports and python
 
 Ò»¡¢Ä¿Â¼
 ***urlRequest.py***
@@ -11,6 +11,6 @@ I love coffee and python
 
 ***about me***
 
-author:Eastsheen
+auther:Eastsheen
 email:yangdongxian@gmail.com
 
