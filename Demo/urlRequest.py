@@ -15,6 +15,7 @@ import urllib2
 import sys
 import cookielib
 import time
+import io,gzip
 
 class url_request():
     #初始化opener headlers,默认headlers为android Nexus 4
@@ -96,7 +97,39 @@ class url_request():
         fileSuc.close()
         fileFai.close()
         urls.close()
-                 
+        
+    #test_send_post
+    def test_Send_Post(self,url,fileFai):
+        reload(sys)
+        print '%s' % sys.getdefaultencoding()
+        sys.setdefaultencoding('utf8')
+        print '%s' % sys.getdefaultencoding()
+        Parameters = {'udid' : 'AB3CDABCCDB7',
+                      'source' : 'youmi',
+                      'app' : 'ctrip8892',
+                      'returnFormat' : '1'}
+        mydata = urllib.urlencode(Parameters)
+        mydata = mydata.encode('utf-8')
+        req = urllib2.Request(url, data=mydata)
+        req.add_header('Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8')
+        req.add_header('User-Agent', 'Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19')
+        req.add_header('Accept-Encoding', 'gzip,deflate,sdch')
+        req.add_header('Accept-Language', 'zh-CN,zh;q=0.8,en;q=0.6')
+        reqp = self.opener.open(req)
+        print str(reqp.code)
+        print str(reqp.msg)
+        buf = io.BytesIO(reqp.read())
+        f = gzip.GzipFile(fileobj=buf)
+        #data2 = f.read()
+        data2 = f.read().decode('utf-8')
+        print "response:%s" % data2
+        try:
+            fileFai.write('%s' % data2)
+        except Exception,e:
+            print str(e)
+        
+        
+        
         
 if __name__=='__main__':
     myRequest = url_request()
@@ -105,9 +138,11 @@ if __name__=='__main__':
     fileFai = open('urlFai.txt','w')
     urls.seek(0)
     #post
-    myRequest.sendPost(urls,fileSuc,fileFai)
+    #myRequest.sendPost(urls,fileSuc,fileFai)
     #get
     #myRequest.send_get(urls,fileSuc,fileFai)
+    url = 'http://m.ctrip.com/market/AdMonitorService.aspx'
+    myRequest.test_Send_Post(url,fileFai)
     myRequest.closeFile()
     
     
