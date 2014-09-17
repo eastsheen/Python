@@ -107,7 +107,7 @@ class appPerTest:
     #getCurrentTime
     def getCurrentTime(self):
         try:
-            currentTime = time.strftime('%Y-%m-%d-%H-%M-%S',time.localtime(time.time()))
+            currentTime = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
             #print currentTime
         except Exception,e:
             print e
