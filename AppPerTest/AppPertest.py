@@ -15,11 +15,16 @@ import os
 import re
 import time
 import sys
+import threading
+import MyThread
 
-class appPerTest:
+global count,mutex
+
+class appPerTest():
     
     def __init__(self):
         """ init """
+
     def connectionDevice(self):
         try:
             devices = os.popen('adb devices').read()
@@ -77,7 +82,7 @@ class appPerTest:
                     HeadAlloc = result[-1]
                     size = 'headSize:%s ' % Headsize
                     alloc = 'headAlloc:%s' % HeadAlloc
-                    log = str(self.getCurrentTime()) + str(' ') + size + alloc
+                    log = str(self.getCurrentTime()) + str(' ') + size + alloc + '\n'
                     print log
                     fileMeminfo.write(log)
                     
@@ -139,24 +144,44 @@ class appPerTest:
                         
         except IOError,e:
             print e
-
-
+            
+    def getfileOjbect(self,fileName,mode):
+        fileOjbect  = open('%s' % fileName,'%s' % mode)
+        return fileOjbect
+def main():
+    print """"""
+    
+    
 if __name__=="__main__":
-    myApp = appPerTest()
-    myApp.connectionDevice()
-    packageName='ctrip.android.view'
+    #global variable 
+    
+    packageName = 'ctrip.android.view'
     startActivity = '/.home.CtripSplashActivity'
     packNameStartActivity = packageName + startActivity
-    myApp.startApp(packNameStartActivity)
+    #fileMeminfo = open('meminfo.txt','w')
+    #fileCpuinfo = open('cpuinfo.txt','w')
+    #meminfo = 'adb shell dumpsys meminfo ctrip.android.view'
+    #cpufinfo = 'adb shell dumpsys cpuinfo'    
+    myApp = appPerTest()
+    #fileObject = myApp.getfileOjbect('meminfo.txt', 'w')
+    #fileObject.write("log")
+
     
-    fileMeminfo = open('meminfo.txt','w')
-    fileCpuinfo = open('cpuinfo.txt','w')
-    #myApp.getDumpinfo()
-    filePath = r'D:\meminfo3.txt'
-    print filePath
-    #myApp.readTxt(filePath)
-    meminfo = 'adb shell dumpsys meminfo ctrip.android.view'
-    cpufinfo = 'adb shell dumpsys cpuinfo'
-    myApp.getDumpsysMeminfo(meminfo,'TOTAL',fileMeminfo)
-    myApp.getDumpsysCpuinfo(cpufinfo,'ctrip.android.view',fileCpuinfo)
+    myApp.startApp(packNameStartActivity)
+    myApp.connectionDevice()
+
+    #myApp.getDumpinfo()  
+    #myApp.getDumpsysMeminfo(meminfo,'TOTAL',fileMeminfo)
+    #myApp.getDumpsysCpuinfo(cpufinfo,'ctrip.android.view',fileCpuinfo)
     #print myApp.getCurrentTime()
+    
+    
+    threads = []
+    num = 5
+    mutex = threading.Lock()
+    oneThread = MyThread.ThreadClass(num)
+    #for x in xrange(0,num):
+        #threads.append(MyThread(num))
+    oneThread.start()   
+    #for t in threads:
+        #t.start()    

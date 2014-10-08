@@ -1,0 +1,5 @@
+2014-10-08 21:50:39 headSize:24607  headAlloc:19744 
+2014-10-08 21:50:40 headSize:27343  headAlloc:26266 
+2014-10-08 21:50:42 headSize:33515  headAlloc:26797 
+2014-10-08 21:50:43 headSize:37519  headAlloc:27390 
+2014-10-08 21:50:45 headSize:41883  headAlloc:36456 
