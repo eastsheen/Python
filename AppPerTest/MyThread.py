@@ -1,12 +1,24 @@
 #!/user/bin/env python
 #coding=utf-8
 
+'''
+Created on 2014-9-12
+
+python 2.7 for window
+
+@auther: Eastsheen
+
+QQ:393857608
+
+'''
+
 import threading
 import datetime
 import time
 import AppPertest
 
 class ThreadClass(threading.Thread):
+    """启动线程时时获取Memery Cpu 信息"""
     def __init__(self,num):
         threading.Thread.__init__(self)
         global mutex
