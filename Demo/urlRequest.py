@@ -127,8 +127,41 @@ class url_request():
             fileFai.write('%s' % data2)
         except Exception,e:
             print str(e)
+    
+    #test_LBSLocateCity        
+    def send_post_LBSLocateCity(self,url):
+        reload(sys)
+        sys.setdefaultencoding('utf8')
+        parameters = {'CountryName':'中国',
+                      'ProvinceName':'陕西省',
+                      'L1CityName':'汉中',
+                      'L2CityName':'城固',
+                      'TownName':'',
+                      'Longitude':'107.33393',
+                      'Latitude':'33.157131',
+                      'Language':'CN'
+                      }
+        mydata = urllib.urlencode(parameters)
+        mydata = mydata.encode('utf-8')
+        req = urllib2.Request(url,data=mydata)
+        self.set_add_headers(req)
+        reqp = self.opener.open(req)
+        print str(reqp.code)
+        print str(reqp.msg)
+        print '%s' % reqp.readlines()
+
+        #buf = io.BytesIO(reqp.read())
+        #f = gzip.GzipFile(fileobj=buf)
+        ##data2 = f.read()
+        #data2 = f.read().decode('utf-8')
+        #print "response:%s" % data2
+   
         
-        
+    def set_add_headers(self,req):
+        req.add_header('Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8')
+        req.add_header('User-Agent', 'Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19')
+        req.add_header('Accept-Encoding', 'gzip,deflate,sdch')
+        req.add_header('Accept-Language', 'zh-CN,zh;q=0.8,en;q=0.6')      
         
         
 if __name__=='__main__':
@@ -142,7 +175,9 @@ if __name__=='__main__':
     #get
     #myRequest.send_get(urls,fileSuc,fileFai)
     url = 'http://m.ctrip.com/market/AdMonitorService.aspx'
-    myRequest.test_Send_Post(url,fileFai)
+    LBSLocateCity = 'http://ws.mobile.uat.qa.nt.ctripcorp.com/CityLocation/json/LBSLocateCity'
+    #myRequest.test_Send_Post(url,fileFai)
+    myRequest.send_post_LBSLocateCity(LBSLocateCity)
     myRequest.closeFile()
     
     
