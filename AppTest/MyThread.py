@@ -15,7 +15,7 @@ QQ:393857608
 import threading
 import datetime
 import time
-import AppPertest
+import AppTest
 
 class ThreadClass(threading.Thread):
     """启动线程时时获取Memery Cpu 信息"""
@@ -24,7 +24,7 @@ class ThreadClass(threading.Thread):
         global mutex
         mutex = threading.Lock()
         self._run_num = num
-        self.myApp = AppPertest.appPerTest()
+        self.myApp = AppTest.appPerTest()
         self.fileOjbect = self.myApp.getfileOjbect('meminfo.txt', 'w')
         self.meminfo = 'adb shell dumpsys meminfo ctrip.android.view'
     def run(self):
