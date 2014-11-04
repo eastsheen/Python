@@ -16,6 +16,7 @@ import sys
 import cookielib
 import time
 import io,gzip
+import pushService
 
 class url_request():
     #初始化opener headlers,默认headlers为android Nexus 4
@@ -24,7 +25,8 @@ class url_request():
         self.cookie_jar = cookielib.CookieJar()
         self.opener = urllib2.build_opener(urllib2.HTTPCookieProcessor())
         self.headlers = {'User-Agent' : 'Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 4 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19'}
-     
+        #self.push = pushService.pushServices()
+        
     #发送post请求     
     def sendPost(self,urls,fileSuc,fileFai):
         ErrorCount = 0
@@ -163,13 +165,23 @@ class url_request():
         req.add_header('Accept-Encoding', 'gzip,deflate,sdch')
         req.add_header('Accept-Language', 'zh-CN,zh;q=0.8,en;q=0.6')      
         
+    def send_post_pushService(self,url,parameters):
+        reload(sys)
+        sys.setdefaultencoding("utf8")
+        mydata = urllib.urlencode(parameters)
+        mydata = mydata.encode(encoding='utf-8')
+        req = urllib2.Request(url, data=mydata)
+        self.set_add_headers(req)
+        reqp = self.opener.open(req)
         
+        return reqp
+    
 if __name__=='__main__':
     myRequest = url_request()
     urls = open('sourceUrl.txt','r')
     fileSuc = open('urlSuc.txt','w')
     fileFai = open('urlFai.txt','w')
-    urls.seek(0)
+    #urls.seek(0)
     #post
     #myRequest.sendPost(urls,fileSuc,fileFai)
     #get
@@ -177,7 +189,10 @@ if __name__=='__main__':
     url = 'http://m.ctrip.com/market/AdMonitorService.aspx'
     LBSLocateCity = 'http://ws.mobile.uat.qa.nt.ctripcorp.com/CityLocation/json/LBSLocateCity'
     #myRequest.test_Send_Post(url,fileFai)
-    myRequest.send_post_LBSLocateCity(LBSLocateCity)
+    #myRequest.send_post_LBSLocateCity(LBSLocateCity)
+    push = pushService.pushServices()
+    push.pushMessageToUsers()
+    
     myRequest.closeFile()
     
     
