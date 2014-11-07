@@ -172,9 +172,10 @@ class url_request():
         mydata = mydata.encode(encoding='utf-8')
         req = urllib2.Request(url, data=mydata)
         self.set_add_headers(req)
-        reqp = self.opener.open(req)
+        #reqp = self.opener.open(req)
+        f = urllib2.urlopen(req)
         
-        return reqp
+        return f
     
 if __name__=='__main__':
     myRequest = url_request()
