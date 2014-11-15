@@ -13,6 +13,7 @@ QQ:393857608
 import urlRequest
 import io
 import gzip
+import json
 
 class pushServices():
     """pushServices"""
@@ -22,31 +23,15 @@ class pushServices():
         self.url_pushMessageToUsers = 'http://ws.push.mobile.uat.qa.nt.ctripcorp.com/CPNPSOA/json/PushMessageToClients'
     
     def pushMessageToUsers(self):
-        ClientTokenList = ['32565957900000028824']
-        parameters = {"ClientTokenList":['32565957900000028824'],
-                      "MessageBody":{"Title":"python1","Payload":"{\"body\":\"python1\",\"ext\":{\"sound\":\"default\",\"url\":\"ctrip://wireless/hotel_inland_list\"}}","ExpiredTime":"2014-11-07 20:49:10","BusinessType":512}}
-        #parameters = {
-        #'userIDList' : '18900001111',
-        #'MessageBody' : '',
-        #'Title' : '推送标题',
-        #'body' : '消息概述消息概述',
-        #'sound' : 'default',
-        #'url' : 'ctrip://wireless/hotel_inland_list',
-        #'ExpiredTime' : '2014-11-7T20:10:00',
-        #'BusinessType' : '1'}
-        #parameters = {
-        #"userIDList" : "18900001111",
-        #"MessageBody" : {
-            #"Title" : "title",
-            #"Payload" : {
-                #"body" : "new",
-                #"ext" : {
-                    #"sound" : "default",
-                    #"url" : "ctrip://wireless/hotel_inland_list"
-                    #}},
-            #"ExpiredTime" : "2014-11-7T20:10:00",
-            #"BusinessType" : "1"}}
-        req = self.request.send_post_pushService(self.url_pushMessageToUsers, parameters)
+        data = [{'ClientTokenList':'32565957900000028824',
+                 'MessageBody':{'Title':'titel',
+                                'ExpiredTime':'2014-11-11T20:49:10',
+                                'BusinessType':'1',
+                                'Payload':{
+                                'body':'body',
+                                'sound':'default'}}}]
+        print "data:%s" % repr(data)
+        req = self.request.send_post_pushService(self.url_pushMessageToUsers, data)
         f = req.read().decode('utf-8')
         print "response:%s" % f
         

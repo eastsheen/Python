@@ -17,6 +17,7 @@ import cookielib
 import time
 import io,gzip
 import pushService
+import watchService
 
 class url_request():
     #初始化opener headlers,默认headlers为android Nexus 4
@@ -179,6 +180,7 @@ class url_request():
     
 if __name__=='__main__':
     myRequest = url_request()
+    
     urls = open('sourceUrl.txt','r')
     fileSuc = open('urlSuc.txt','w')
     fileFai = open('urlFai.txt','w')
@@ -191,8 +193,12 @@ if __name__=='__main__':
     LBSLocateCity = 'http://ws.mobile.uat.qa.nt.ctripcorp.com/CityLocation/json/LBSLocateCity'
     #myRequest.test_Send_Post(url,fileFai)
     #myRequest.send_post_LBSLocateCity(LBSLocateCity)
-    push = pushService.pushServices()
-    push.pushMessageToUsers()
+    #push = pushService.pushServices()
+    #push.pushMessageToUsers()
+    myWatch = watchService.watchService()
+    #myWatch.FlightCheckInInfoRequest()
+    #myWatch.ShowCarInInfo()
+    myWatch.TravelAgendaInfo()
     
     myRequest.closeFile()
     
