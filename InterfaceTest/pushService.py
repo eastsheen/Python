@@ -20,7 +20,7 @@ class pushServices():
     def __init__(self):
         """init"""
         self.request = urlRequest.url_request()
-        self.url_pushMessageToUsers = 'http://ws.push.mobile.uat.qa.nt.ctripcorp.com/CPNPSOA/json/PushMessageToClients'
+        self.url_pushMessageToUsers = None
     
     def pushMessageToUsers(self):
         data = [{'ClientTokenList':'32565957900000028824',

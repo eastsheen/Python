@@ -189,8 +189,8 @@ if __name__=='__main__':
     #myRequest.sendPost(urls,fileSuc,fileFai)
     #get
     #myRequest.send_get(urls,fileSuc,fileFai)
-    url = 'http://m.ctrip.com/market/AdMonitorService.aspx'
-    LBSLocateCity = 'http://ws.mobile.uat.qa.nt.ctripcorp.com/CityLocation/json/LBSLocateCity'
+    url = None
+    LBSLocateCity = None
     #myRequest.test_Send_Post(url,fileFai)
     #myRequest.send_post_LBSLocateCity(LBSLocateCity)
     #push = pushService.pushServices()

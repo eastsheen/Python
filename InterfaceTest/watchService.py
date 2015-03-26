@@ -19,9 +19,9 @@ class watchService():
     def __init__(self):
         print "watchService start"
         self.request = urlRequest.url_request()
-        self.url_Flight = 'http://ws.mobile.uat.qa.nt.ctripcorp.com/watchappservice/json/FlightCheckInInfo'
-        self.url_Car = 'http://ws.mobile.uat.qa.nt.ctripcorp.com/watchappservice/json/TravelAgendaInfo'
-        self.url_TravelAgenda = 'http://ws.mobile.uat.qa.nt.ctripcorp.com/watchappservice/json/TravelAgendaInfo'
+        self.url_Flight = None
+        self.url_Car = None
+        self.url_TravelAgenda = None
         self.fileCount = open('TravelAgendaInfo.txt','w')
         
     def FlightCheckInInfoRequest(self):
