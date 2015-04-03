@@ -1,0 +1,237 @@
+send_post_requests --Pass
+2015-04-03-16-50-07 Request:{"age": 20, "name": "tester", "address": "shanghai"}
+2015-04-03-16-50-07 Response:{
+  "args": {}, 
+  "data": "{\"age\": 20, \"name\": \"tester\", \"address\": \"shanghai\"}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Accept-Encoding": "gzip, deflate", 
+    "Content-Length": "52", 
+    "Content-Type": "application/json", 
+    "Host": "httpbin.org", 
+    "User-Agent": "python-requests/2.4.3 CPython/2.7.3 Windows/7"
+  }, 
+  "json": {
+    "address": "shanghai", 
+    "age": 20, 
+    "name": "tester"
+  }, 
+  "origin": "61.152.150.146", 
+  "url": "http://httpbin.org/post"
+}
+
+send_post_requests --Pass
+2015-04-03-16-50-58 Request:{"age": 20, "name": "tester", "address": "shanghai"}
+2015-04-03-16-50-58 Response:{
+  "args": {}, 
+  "data": "{\"age\": 20, \"name\": \"tester\", \"address\": \"shanghai\"}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Accept-Encoding": "gzip, deflate", 
+    "Content-Length": "52", 
+    "Content-Type": "application/json", 
+    "Host": "httpbin.org", 
+    "User-Agent": "python-requests/2.4.3 CPython/2.7.3 Windows/7"
+  }, 
+  "json": {
+    "address": "shanghai", 
+    "age": 20, 
+    "name": "tester"
+  }, 
+  "origin": "61.152.150.145", 
+  "url": "http://httpbin.org/post"
+}
+
+send_post_requests --Pass
+2015-04-03-16-59-43 Request:{"age": 20, "name": "tester", "address": "shanghai"}
+2015-04-03-16-59-43 Response:{
+  "args": {}, 
+  "data": "{\"age\": 20, \"name\": \"tester\", \"address\": \"shanghai\"}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Accept-Encoding": "gzip, deflate", 
+    "Content-Length": "52", 
+    "Content-Type": "application/json", 
+    "Host": "httpbin.org", 
+    "User-Agent": "python-requests/2.4.3 CPython/2.7.3 Windows/7"
+  }, 
+  "json": {
+    "address": "shanghai", 
+    "age": 20, 
+    "name": "tester"
+  }, 
+  "origin": "61.152.150.145", 
+  "url": "http://httpbin.org/post"
+}
+
+send_post_requests --Pass
+2015-04-03-17-00-25 Request:{"age": 20, "name": "tester", "address": "shanghai"}
+2015-04-03-17-00-25 Response:{
+  "args": {}, 
+  "data": "{\"age\": 20, \"name\": \"tester\", \"address\": \"shanghai\"}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Accept-Encoding": "gzip, deflate", 
+    "Content-Length": "52", 
+    "Content-Type": "application/json", 
+    "Host": "httpbin.org", 
+    "User-Agent": "python-requests/2.4.3 CPython/2.7.3 Windows/7"
+  }, 
+  "json": {
+    "address": "shanghai", 
+    "age": 20, 
+    "name": "tester"
+  }, 
+  "origin": "61.152.150.145", 
+  "url": "http://httpbin.org/post"
+}
+
+send_post_requests --Pass
+2015-04-03-17-00-46 Request:{"age": 20, "name": "tester", "address": "shanghai"}
+2015-04-03-17-00-46 Response:{
+  "args": {}, 
+  "data": "{\"age\": 20, \"name\": \"tester\", \"address\": \"shanghai\"}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Accept-Encoding": "gzip, deflate", 
+    "Content-Length": "52", 
+    "Content-Type": "application/json", 
+    "Host": "httpbin.org", 
+    "User-Agent": "python-requests/2.4.3 CPython/2.7.3 Windows/7"
+  }, 
+  "json": {
+    "address": "shanghai", 
+    "age": 20, 
+    "name": "tester"
+  }, 
+  "origin": "61.152.150.146", 
+  "url": "http://httpbin.org/post"
+}
+
+send_post_requests --Pass
+2015-04-03-17-07-58 Request:{"age": 20, "name": "tester", "address": "shanghai"}
+2015-04-03-17-07-58 Response:{
+  "args": {}, 
+  "data": "{\"age\": 20, \"name\": \"tester\", \"address\": \"shanghai\"}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Accept-Encoding": "gzip, deflate", 
+    "Content-Length": "52", 
+    "Content-Type": "application/json", 
+    "Host": "httpbin.org", 
+    "User-Agent": "python-requests/2.4.3 CPython/2.7.3 Windows/7"
+  }, 
+  "json": {
+    "address": "shanghai", 
+    "age": 20, 
+    "name": "tester"
+  }, 
+  "origin": "61.152.150.145", 
+  "url": "http://httpbin.org/post"
+}
+
+send_get_requests --Pass
+2015-04-03-17-08-41 Request:{"work": "test", "name": "eastsheen"}
+2015-04-03-17-08-41 Response:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>405 Method Not Allowed</title>
+<h1>Method Not Allowed</h1>
+<p>The method is not allowed for the requested URL.</p>
+
+send_post_requests --Pass
+2015-04-03-17-08-42 Request:{"age": 20, "name": "tester", "address": "shanghai"}
+2015-04-03-17-08-42 Response:{
+  "args": {}, 
+  "data": "{\"age\": 20, \"name\": \"tester\", \"address\": \"shanghai\"}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Accept-Encoding": "gzip, deflate", 
+    "Content-Length": "52", 
+    "Content-Type": "application/json", 
+    "Host": "httpbin.org", 
+    "User-Agent": "python-requests/2.4.3 CPython/2.7.3 Windows/7"
+  }, 
+  "json": {
+    "address": "shanghai", 
+    "age": 20, 
+    "name": "tester"
+  }, 
+  "origin": "61.152.150.146", 
+  "url": "http://httpbin.org/post"
+}
+
+send_get_requests --Pass
+2015-04-03-17-16-50 Request:{"work": "test", "name": "eastsheen"}
+2015-04-03-17-16-50 Response:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>405 Method Not Allowed</title>
+<h1>Method Not Allowed</h1>
+<p>The method is not allowed for the requested URL.</p>
+
+send_post_requests --Pass
+2015-04-03-17-16-50 Request:{"age": 20, "name": "tester", "address": "shanghai"}
+2015-04-03-17-16-50 Response:{
+  "args": {}, 
+  "data": "{\"age\": 20, \"name\": \"tester\", \"address\": \"shanghai\"}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Accept-Encoding": "gzip, deflate", 
+    "Content-Length": "52", 
+    "Content-Type": "application/json", 
+    "Host": "httpbin.org", 
+    "User-Agent": "python-requests/2.4.3 CPython/2.7.3 Windows/7"
+  }, 
+  "json": {
+    "address": "shanghai", 
+    "age": 20, 
+    "name": "tester"
+  }, 
+  "origin": "61.152.150.145", 
+  "url": "http://httpbin.org/post"
+}
+
+send_get_requests --Pass
+2015-04-03-17-17-20 Request:{"work": "test", "name": "eastsheen"}
+2015-04-03-17-17-20 Response:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>405 Method Not Allowed</title>
+<h1>Method Not Allowed</h1>
+<p>The method is not allowed for the requested URL.</p>
+
+send_post_requests --Pass
+2015-04-03-17-17-20 Request:{"age": 20, "name": "tester", "address": "shanghai"}
+2015-04-03-17-17-20 Response:{
+  "args": {}, 
+  "data": "{\"age\": 20, \"name\": \"tester\", \"address\": \"shanghai\"}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Accept-Encoding": "gzip, deflate", 
+    "Content-Length": "52", 
+    "Content-Type": "application/json", 
+    "Host": "httpbin.org", 
+    "User-Agent": "python-requests/2.4.3 CPython/2.7.3 Windows/7"
+  }, 
+  "json": {
+    "address": "shanghai", 
+    "age": 20, 
+    "name": "tester"
+  }, 
+  "origin": "61.152.150.145", 
+  "url": "http://httpbin.org/post"
+}
+
