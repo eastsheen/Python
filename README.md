@@ -27,15 +27,16 @@ I love sports and python
 ###### ● 自动生成html报告—未完成
 	
 #### 代码文件
-###### ● requestsProjectMain.py  --实现接口post请求，验证response、写日志
-###### ● getCurrentTime.py --提供些时间控件获取方法
-###### ● testCaseTotal.py  --统计用例执行结果
-###### ● writelogging.py   --提供写日志方法
+> ###### ● requestsProjectMain.py  --实现接口post请求，验证response、写日志
+> ###### ● getCurrentTime.py --提供些时间控件获取方法
+> ###### ● testCaseTotal.py  --统计用例执行结果
+> ###### ● writelogging.py   --提供写日志方法
 
 	
 > 
-> 
 ***about me***
+> 
 auther:Eastsheen
+> 
 email:yangdongxian@gmail.com or QQ:393857608
 
