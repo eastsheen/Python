@@ -11,8 +11,9 @@ I love sports and python
 > ###### ● 用adb shell 连接设备
 > ###### ● 遍历指定路径下apk包，存放list里
 > ###### ● adb shell install依次安装apk包
-> ###### ● 安装成功启动app，进行随意monkey测试，截图保存
+> ###### ● 安装成功启动app，进行随意monkey测试，截图保存 -- 未完成
 > ###### ● 卸装app，循环执行list的apk
+> ###### ● 统计用例执行结果--未完成
 
 #### 代码文件
 > ###### ● mainApp.py  --主类管理各个用例
