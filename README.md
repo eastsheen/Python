@@ -1,33 +1,34 @@
+
 Python
 ========
 I love sports and python
 
-Ä¿Â¼
-Ò»¡¢AppTest
-  ¼òµ¥ÑéÖ¤AndroidÇşµÀ°ü£¬ÊÇÖØ¸´µÄ¹¤×÷£¬¿ÉÒÔÍ¨¹ı×Ô¶¯»¯À´ÊµÏÖ
-    ¡ñ ÓÃadb shell Á¬½ÓÉè±¸
-    ¡ñ ±éÀúÖ¸¶¨Â·¾¶ÏÂapk°ü£¬´æ·ÅlistÀï
-    ¡ñ adb shell installÒÀ´Î°²×°apk°ü
-    ¡ñ °²×°³É¹¦Æô¶¯app£¬½øĞĞËæÒâmonkey²âÊÔ£¬½ØÍ¼±£´æ
-    ¡ñ Ğ¶×°app£¬Ñ­»·Ö´ĞĞlistµÄapk
+ç›®å½•
+ä¸€ã€AppTest
+  ç®€å•éªŒè¯Androidæ¸ é“åŒ…ï¼Œæ˜¯é‡å¤çš„å·¥ä½œï¼Œå¯ä»¥é€šè¿‡è‡ªåŠ¨åŒ–æ¥å®ç°
+    â— ç”¨adb shell è¿æ¥è®¾å¤‡
+    â— éå†æŒ‡å®šè·¯å¾„ä¸‹apkåŒ…ï¼Œå­˜æ”¾listé‡Œ
+    â— adb shell installä¾æ¬¡å®‰è£…apkåŒ…
+    â— å®‰è£…æˆåŠŸå¯åŠ¨appï¼Œè¿›è¡Œéšæ„monkeyæµ‹è¯•ï¼Œæˆªå›¾ä¿å­˜
+    â— å¸è£…appï¼Œå¾ªç¯æ‰§è¡Œlistçš„apk
 
-  ´úÂëÎÄ¼ş
-    ¡ñ mainApp.py  --Ö÷Àà¹ÜÀí¸÷¸öÓÃÀı
-    ¡ñ testAppChannelPackages.py  --ÊµÏÖ¼òµ¥ÑéÖ¤AndroidÇşµÀ°ü
+  ä»£ç æ–‡ä»¶
+    â— mainApp.py  --ä¸»ç±»ç®¡ç†å„ä¸ªç”¨ä¾‹
+    â— testAppChannelPackages.py  --å®ç°ç®€å•éªŒè¯Androidæ¸ é“åŒ…
 
-¶ş¡¢RequestProject
-  Ö÷Òª¹¦ÄÜ½éÉÜ£º
-    ¡ñ Requests  post¡¢get·½·¨ÔËÓÃ
-    ¡ñ Response ÏìÓ¦Ğ£Ñé
-    ¡ñ ³£ÓÃÊ±¼ä·â×°
-    ¡ñ ¶ÁĞ´sqlite3¡¢txtÎÄ±¾£¬±ãÓÚ²âÊÔÊı¾İ¶ÁĞ´¡ªÎ´Íê³É
-    ¡ñ ×Ô¶¯Éú³Éhtml±¨¸æ¡ªÎ´Íê³É
+äºŒã€RequestProject
+  ä¸»è¦åŠŸèƒ½ä»‹ç»ï¼š
+    â— Requests  postã€getæ–¹æ³•è¿ç”¨
+    â— Response å“åº”æ ¡éªŒ
+    â— å¸¸ç”¨æ—¶é—´å°è£…
+    â— è¯»å†™sqlite3ã€txtæ–‡æœ¬ï¼Œä¾¿äºæµ‹è¯•æ•°æ®è¯»å†™â€”æœªå®Œæˆ
+    â— è‡ªåŠ¨ç”ŸæˆhtmlæŠ¥å‘Šâ€”æœªå®Œæˆ
 	
-  ´úÂëÎÄ¼ş
-    ¡ñ requestsProjectMain.py  --ÊµÏÖ½Ó¿ÚpostÇëÇó£¬ÑéÖ¤response¡¢Ğ´ÈÕÖ¾
-	¡ñ getCurrentTime.py --Ìá¹©Ğ©Ê±¼ä¿Ø¼ş»ñÈ¡·½·¨
-	¡ñ testCaseTotal.py  --Í³¼ÆÓÃÀıÖ´ĞĞ½á¹û
-	¡ñ writelogging.py   --Ìá¹©Ğ´ÈÕÖ¾·½·¨
+  ä»£ç æ–‡ä»¶
+    â— requestsProjectMain.py  --å®ç°æ¥å£postè¯·æ±‚ï¼ŒéªŒè¯responseã€å†™æ—¥å¿—
+    â— getCurrentTime.py --æä¾›äº›æ—¶é—´æ§ä»¶è·å–æ–¹æ³•
+    â— testCaseTotal.py  --ç»Ÿè®¡ç”¨ä¾‹æ‰§è¡Œç»“æœ
+    â— writelogging.py   --æä¾›å†™æ—¥å¿—æ–¹æ³•
 
 
 
