@@ -35,9 +35,7 @@ I love sports and python
 	
 ###
 ###
-> 
-> 
-> 
+
 ##### about me
 
 ##### auther:Eastsheen
